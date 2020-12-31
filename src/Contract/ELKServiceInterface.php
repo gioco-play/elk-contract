@@ -11,8 +11,8 @@ interface ELKServiceInterface {
      *
      * @param string $uri
      * @param array $data
-     * @return void
+     * @return array
      */
-    function post(string $uri, array $data): void;
+    function post(string $uri, array $data): array;
 }
 
