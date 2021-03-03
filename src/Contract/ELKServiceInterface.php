@@ -8,7 +8,6 @@ interface ELKServiceInterface {
 
     /**
      * GF 請求 vendor 的 log
-     * @param string $uri   // ELK 請求接口
      * @param string $vendor_code   // 遊戲商代碼
      * @param string $op_code       // 營運商代碼
      * @param string $host          // 請求url
@@ -21,8 +20,7 @@ interface ELKServiceInterface {
      * @param int $created_at       // 建立時間
      * @return mixed
      */
-    function gfRequestVendor(string $uri,
-                             string $vendor_code,
+    function gfRequestVendor(string $vendor_code,
                              string $op_code,
                              string $host,
                              string $url,
