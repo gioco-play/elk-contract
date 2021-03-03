@@ -17,7 +17,6 @@ interface ELKServiceInterface {
      * @param int $http_code        // http code
      * @param array $header         // response header
      * @param string $response      // vendor response
-     * @param int $created_at       // 建立時間
      * @return mixed
      */
     function gfRequestVendor(string $vendor_code,
@@ -28,8 +27,7 @@ interface ELKServiceInterface {
                              float $request_time,
                              int $http_code,
                              array $header,
-                             string $response,
-                             int $created_at
+                             string $response
     );
 
     /**
