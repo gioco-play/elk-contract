@@ -31,6 +31,17 @@ interface ELKServiceInterface {
     );
 
     /**
+     * vendor 請求 GF 的 log
+     * @param string $vendor_code 遊戲商代碼
+     * @param string $path 請求路徑
+     * @param array $request 請求 ["method" 方法, "data" 資料, "header" 標頭    ]
+     * @param array $response 返回 ["data" 資料, "http_code" HTTP狀態碼 ]
+     * @param int $execTime 執行時間 second
+     * @return mixed
+     */
+    function vendorRequestGF(string $vendor_code, string $path, array $request, array $response, int $execTime);
+
+    /**
      * 提交資料至ELK
      *
      * @param string $uri
