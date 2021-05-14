@@ -43,6 +43,17 @@ interface ELKServiceInterface {
     function vendorRequestGF(string $vendor_code, string $path, array $request, array $response, int $execTime, int $createTime);
 
     /**
+     * @param string $operator_code 營運商代碼
+     * @param string $host
+     * @param string $path
+     * @param array $requestParams
+     * @param float $transferTime 請求時間
+     * @param array $response 返回 ["body" , "headers" , "status_code"]
+     * @return mixed
+     */
+    function seamlessWalletRequest(string $operator_code, string $host, string $path, array $requestParams, float $transferTime, array $response);
+
+    /**
      * 提交資料至ELK
      *
      * @param string $uri
