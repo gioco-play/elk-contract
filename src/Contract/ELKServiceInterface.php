@@ -36,11 +36,11 @@ interface ELKServiceInterface {
      * @param string $path 請求路徑
      * @param array $request 請求 ["method" 方法, "data" 資料, "header" 標頭    ]
      * @param array $response 返回 ["data" 資料, "http_code" HTTP狀態碼 ]
-     * @param int $execTime 執行時間 second
+     * @param float $execTime 執行時間 second
      * @param int $createTime 13 digit timestamp
      * @return mixed
      */
-    function vendorRequestGF(string $vendor_code, string $path, array $request, array $response, int $execTime, int $createTime);
+    function vendorRequestGF(string $vendor_code, string $path, array $request, array $response, float $execTime, int $createTime);
 
     /**
      * @param string $op_code 營運商代碼
