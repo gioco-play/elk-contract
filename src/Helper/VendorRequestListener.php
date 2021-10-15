@@ -53,7 +53,7 @@ class VendorRequestListener implements ListenerInterface
                 [
                     "data" => $requestData,
                     "method" => $requestMethod,
-                    "header" => $requestHeaders
+                    "headers" => $requestHeaders
                 ],
                 $event->responseArr,
                 (micro_timestamp() - $execStart) / 1000,
