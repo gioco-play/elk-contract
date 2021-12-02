@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace GiocoPlus\ELK\Helper;
 
+use Psr\Http\Message\ResponseInterface;
+
 /**
  * Class RequestVendor
  * @package App\Event
@@ -20,12 +22,22 @@ class RequestVendor
     /**
      * @var string
      */
-    public $url;
+    public $path;
+
+    /**
+     * @var string
+     */
+    public $method;
 
     /**
      * @var array
      */
     public $request;
+
+    /**
+     * @var array
+     */
+    public $requestHeaders;
 
     /**
      * @var float
@@ -35,12 +47,12 @@ class RequestVendor
     /**
      * @var int
      */
-    public $httpCode;
+    public $responseHttpCode;
 
     /**
      * @var array
      */
-    public $header;
+    public $responseHeaders;
 
     /**
      * @var string
@@ -57,25 +69,65 @@ class RequestVendor
      */
     public $vendorCode;
 
+//    public function __construct(
+//        string $opCode,
+//        string $vendorCode,
+//        string $host,
+//        string $url,
+//        array $request,
+//        float $requestTime,
+//        int $httpCode,
+//        array $header,
+//        string $response
+//    ) {
+//        $this->opCode = $opCode;
+//        $this->vendorCode = $vendorCode;
+//        $this->host = $host;
+//        $this->url = $url;
+//        $this->request = $request;
+//        $this->requestTime = $requestTime;
+//        $this->httpCode = $httpCode;
+//        $this->header = $header;
+//        $this->response = $response;
+//    }
+
+    /**
+     * RequestVendor constructor.
+     * @param string $opCode
+     * @param string $vendorCode
+     * @param string $host
+     * @param string $path
+     * @param string $method
+     * @param array $request
+     * @param float $requestTime
+     * @param string $response
+     * @param ResponseInterface $resp
+     * @param array $requestHeaders
+     */
     public function __construct(
         string $opCode,
         string $vendorCode,
         string $host,
-        string $url,
+        string $path,
+        string $method,
         array $request,
         float $requestTime,
-        int $httpCode,
-        array $header,
-        string $response
-    ) {
+        string $response,
+        ResponseInterface $resp,
+        array $requestHeaders = []
+    )
+    {
         $this->opCode = $opCode;
         $this->vendorCode = $vendorCode;
         $this->host = $host;
-        $this->url = $url;
+        $this->path = $path;
+        $this->method = $method;
         $this->request = $request;
+        $this->requestHeaders = $requestHeaders;
         $this->requestTime = $requestTime;
-        $this->httpCode = $httpCode;
-        $this->header = $header;
+
         $this->response = $response;
+        $this->responseHttpCode = $resp->getStatusCode();
+        $this->responseHeaders = $resp->getHeaders();
     }
 }

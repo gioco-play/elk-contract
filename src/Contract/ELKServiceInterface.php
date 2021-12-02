@@ -8,26 +8,32 @@ interface ELKServiceInterface {
 
     /**
      * GF 請求 vendor 的 log
-     * @param string $vendor_code   // 遊戲商代碼
-     * @param string $op_code       // 營運商代碼
-     * @param string $host          // 請求url
-     * @param string $url           // 請求url function
-     * @param array $request        // 請求參數
-     * @param float $request_time   // 請求執行時間
-     * @param int $http_code        // http code
-     * @param array $header         // response header
-     * @param string $response      // vendor response
+     * @param string $vendorCode   遊戲商代碼
+     * @param string $opCode       營運商代碼
+     * @param string $host          請求 domain
+     * @param string $path           請求路徑
+     * @param string $method       請求方法
+     * @param array $request        請求參數
+     * @param float $requestTime   請求執行時間
+     * @param string $response      vendor response 返回內容
+     * @param int $responseHttpCode        response http code
+     * @param array $responseHeaders         response header
+     * @param array $requestHeaders 可選 請求 headers
+     *
      * @return mixed
      */
-    function gfRequestVendor(string $vendor_code,
-                             string $op_code,
-                             string $host,
-                             string $url,
-                             array $request,
-                             float $request_time,
-                             int $http_code,
-                             array $header,
-                             string $response
+    function gfRequestVendor(
+        string $vendorCode,
+        string $opCode,
+        string $host,
+        string $path,
+        string $method,
+        array $request,
+        float $requestTime,
+        string $response,
+        int $responseHttpCode,
+        array $responseHeaders,
+        array $requestHeaders
     );
 
     /**

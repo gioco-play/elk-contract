@@ -52,12 +52,14 @@ class RequestVendorListener implements ListenerInterface
                 $event->vendorCode,
                 $event->opCode,
                 $event->host,
-                $event->url,
+                $event->path,
+                $event->method,
                 $event->request,
                 $event->requestTime,
-                $event->httpCode,
-                $event->header,
-                $event->response
+                $event->response,
+                $event->responseHttpCode,
+                $event->responseHeader,
+                $event->requestHeaders
             );
         });
     }
