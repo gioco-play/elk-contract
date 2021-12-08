@@ -48,7 +48,7 @@ interface ELKServiceInterface {
      * @param string $responseOther
      * @return mixed
      */
-    function vendorRequestGF(string $vendorCode, string $path, string $requestParams, string $requestMethod, string $requestHeaders, int $execTime, string $response, string $responseOther);
+    function vendorRequestGF(string $vendorCode, string $path, string $requestParams, string $requestMethod, string $requestHeaders, int $execTime, string $response, string $responseOther = '');
 
     /**
      * @param string $op_code 營運商代碼
