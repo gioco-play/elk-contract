@@ -47,7 +47,7 @@ class VendorRequest
      */
     public $execStart;
 
-    public function __construct(RequestInterface $request, string $vendorCode, int $execStart, string $response, string $responseOther)
+    public function __construct(RequestInterface $request, string $vendorCode, int $execStart, string $response, string $responseOther = '')
     {
         $this->vendorCode = $vendorCode;
         $this->requestPath = $request->path();
