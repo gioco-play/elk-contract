@@ -47,6 +47,14 @@ class VendorRequest
      */
     public $execStart;
 
+    /**
+     * VendorRequest constructor.
+     * @param RequestInterface $request
+     * @param string $vendorCode
+     * @param int $execStart
+     * @param string $response
+     * @param string $responseOther
+     */
     public function __construct(RequestInterface $request, string $vendorCode, int $execStart, string $response, string $responseOther = '')
     {
         $this->vendorCode = $vendorCode;
