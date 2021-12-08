@@ -20,7 +20,7 @@ class VendorRequest
     /**
      * @var array
      */
-    public $requestData;
+    public $requestParams;
 
     /**
      * @var string
@@ -33,23 +33,29 @@ class VendorRequest
     public $requestHeaders;
 
     /**
-     * @var array
+     * @var string
      */
-    public $responseArr;
+    public $response;
+
+    /**
+     * @var string
+     */
+    public $responseOther;
 
     /**
      * @var int
      */
     public $execStart;
 
-    public function __construct(RequestInterface $request, string $vendorCode, array $responseArr, int $execStart)
+    public function __construct(RequestInterface $request, string $vendorCode, int $execStart, string $response, string $responseOther)
     {
         $this->vendorCode = $vendorCode;
         $this->requestPath = $request->path();
-        $this->requestData = $request->all();
+        $this->requestParams = $request->all();
         $this->requestMethod = $request->getMethod();
         $this->requestHeaders = $request->getHeaders();
-        $this->responseArr = $responseArr;
         $this->execStart = $execStart;
+        $this->response = $response;
+        $this->responseOther = $responseOther;
     }
 }

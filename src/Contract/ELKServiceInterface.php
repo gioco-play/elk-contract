@@ -38,15 +38,17 @@ interface ELKServiceInterface {
 
     /**
      * vendor 請求 GF 的 log
-     * @param string $vendor_code 遊戲商代碼
+     * @param string $vendorCode
      * @param string $path 請求路徑
-     * @param array $request 請求 ["method" 方法, "data" 資料, "header" 標頭    ]
-     * @param array $response 返回 ["data" 資料, "http_code" HTTP狀態碼 ]
-     * @param float $execTime 執行時間 second
-     * @param int $createTime 13 digit timestamp
+     * @param string $requestParams
+     * @param string $requestMethod
+     * @param string $requestHeaders
+     * @param int $execTime 執行時間 second
+     * @param string $response
+     * @param string $responseOther
      * @return mixed
      */
-    function vendorRequestGF(string $vendor_code, string $path, array $request, array $response, float $execTime, int $createTime);
+    function vendorRequestGF(string $vendorCode, string $path, string $requestParams, string $requestMethod, string $requestHeaders, int $execTime, string $response, string $responseOther);
 
     /**
      * @param string $op_code 營運商代碼

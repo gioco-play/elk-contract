@@ -40,24 +40,35 @@ class VendorRequestListener implements ListenerInterface
         co(function() use ($event) {
             $requestPath = $event->requestPath;
             $requestMethod = $event->requestMethod;
-            $requestData = $event->requestData;
-            $requestHeaders = $event->requestHeaders;
+            $requestParams = json_encode($event->requestParams, JSON_UNESCAPED_UNICODE);
+            $requestHeaders = json_encode($event->requestHeaders, JSON_UNESCAPED_UNICODE);
             $execStart = $event->execStart;
 
 //            var_dump($event->response);
 //            var_dump($event->$requestHeader);
 
+//            $this->elk->vendorRequestGF(
+//                $event->vendorCode,
+//                $requestPath,
+//                [
+//                    "data" => $requestParams,
+//                    "method" => $requestMethod,
+//                    "headers" => $requestHeaders
+//                ],
+//                $event->responseArr,
+//                (micro_timestamp() - $execStart) / 1000,
+//                micro_timestamp()
+//            );
+
             $this->elk->vendorRequestGF(
                 $event->vendorCode,
                 $requestPath,
-                [
-                    "data" => $requestData,
-                    "method" => $requestMethod,
-                    "headers" => $requestHeaders
-                ],
-                $event->responseArr,
+                $requestParams,
+                $requestMethod,
+                $requestHeaders,
                 (micro_timestamp() - $execStart) / 1000,
-                micro_timestamp()
+                $event->response,
+                $event->responseOther
             );
         });
     }
