@@ -58,7 +58,7 @@ class RequestVendorListener implements ListenerInterface
                 $event->requestTime,
                 $event->response,
                 $event->responseHttpCode,
-                $event->responseHeader,
+                $event->responseHeaders,
                 $event->requestHeaders
             );
         });
