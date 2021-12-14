@@ -60,6 +60,8 @@ class VendorRequestListener implements ListenerInterface
 //                micro_timestamp()
 //            );
 
+            $execStart = intval(str_pad(strval($execStart), 13, '0'));
+
             $this->elk->vendorRequestGF(
                 $event->vendorCode,
                 $requestPath,
