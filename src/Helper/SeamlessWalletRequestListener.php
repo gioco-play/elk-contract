@@ -43,7 +43,7 @@ class SeamlessWalletRequestListener implements ListenerInterface
                 $event->transferStats->getRequest()->getUri()->getPath(),
                 $event->requestParams,
                 $event->transferStats->getTransferTime(),
-                json_encode($event->response),
+                $event->response,
                 $event->transferStats->getResponse()->getHeaders(),
                 $event->transferStats->getResponse()->getStatusCode()
             );
