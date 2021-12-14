@@ -44,22 +44,6 @@ class VendorRequestListener implements ListenerInterface
             $requestHeaders = json_encode($event->requestHeaders, JSON_UNESCAPED_UNICODE);
             $execStart = $event->execStart;
 
-//            var_dump($event->response);
-//            var_dump($event->$requestHeader);
-
-//            $this->elk->vendorRequestGF(
-//                $event->vendorCode,
-//                $requestPath,
-//                [
-//                    "data" => $requestParams,
-//                    "method" => $requestMethod,
-//                    "headers" => $requestHeaders
-//                ],
-//                $event->responseArr,
-//                (micro_timestamp() - $execStart) / 1000,
-//                micro_timestamp()
-//            );
-
             $execStart = intval(str_pad(strval($execStart), 13, '0'));
 
             $this->elk->vendorRequestGF(

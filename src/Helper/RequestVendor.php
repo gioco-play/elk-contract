@@ -69,28 +69,6 @@ class RequestVendor
      */
     public $vendorCode;
 
-//    public function __construct(
-//        string $opCode,
-//        string $vendorCode,
-//        string $host,
-//        string $url,
-//        array $request,
-//        float $requestTime,
-//        int $httpCode,
-//        array $header,
-//        string $response
-//    ) {
-//        $this->opCode = $opCode;
-//        $this->vendorCode = $vendorCode;
-//        $this->host = $host;
-//        $this->url = $url;
-//        $this->request = $request;
-//        $this->requestTime = $requestTime;
-//        $this->httpCode = $httpCode;
-//        $this->header = $header;
-//        $this->response = $response;
-//    }
-
     /**
      * RequestVendor constructor.
      * @param string $opCode
