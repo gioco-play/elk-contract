@@ -25,12 +25,27 @@ class SeamlessWalletRequest
     /**
      * @var string
      */
+    public $requestEncrypt;
+
+    /**
+     * @var string
+     */
     public $response;
 
-    public function __construct(string $opCode, TransferStats $transferStats, array $requestParams, string $response) {
+    /**
+     * @var string
+     */
+    public $responseDecrypt;
+
+    public function __construct(string $opCode, TransferStats $transferStats, array $requestParams, string $requestEncrypt, string $response, string $responseDecrypt) {
         $this->opCode = $opCode;
         $this->transferStats = $transferStats;
         $this->requestParams = $requestParams;
+        $this->requestEncrypt = $requestEncrypt;
         $this->response = $response;
+        $this->responseDecrypt = $responseDecrypt;
     }
+
+
+
 }
