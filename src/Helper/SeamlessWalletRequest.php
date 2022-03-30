@@ -28,6 +28,11 @@ class SeamlessWalletRequest
     public $requestEncrypt;
 
     /**
+     * @var array
+     */
+    public $requestHeaders;
+
+    /**
      * @var string
      */
     public $response;
@@ -37,11 +42,12 @@ class SeamlessWalletRequest
      */
     public $responseDecrypt;
 
-    public function __construct(string $opCode, TransferStats $transferStats, array $requestParams, string $requestEncrypt, string $response, string $responseDecrypt) {
+    public function __construct(string $opCode, TransferStats $transferStats, array $requestParams, string $requestEncrypt, array $requestHeaders, string $response, string $responseDecrypt) {
         $this->opCode = $opCode;
         $this->transferStats = $transferStats;
         $this->requestParams = $requestParams;
         $this->requestEncrypt = $requestEncrypt;
+        $this->requestHeaders = $requestHeaders;
         $this->response = $response;
         $this->responseDecrypt = $responseDecrypt;
     }
