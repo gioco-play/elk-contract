@@ -47,8 +47,8 @@ class SeamlessWalletRequestListener implements ListenerInterface
                 method_exists($event->transferStats, 'getTransferTime') ? $event->transferStats->getTransferTime() : '',
                 $event->response,
                 $event->responseDecrypt,
-                $event->transferStats->getResponse()->getHeaders(),
-                $event->transferStats->getResponse()->getStatusCode()
+                method_exists($event->transferStats, 'getHeaders') ? $event->transferStats->getResponse()->getHeaders() : [],
+                method_exists($event->transferStats, 'getStatusCode') ? $event->transferStats->getResponse()->getStatusCode() : '',
             );
         });
     }
