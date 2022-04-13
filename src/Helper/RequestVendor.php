@@ -91,7 +91,7 @@ class RequestVendor
         array $request,
         float $requestTime,
         string $response,
-        ResponseInterface $resp,
+        $resp,
         array $requestHeaders = []
     )
     {
@@ -105,7 +105,7 @@ class RequestVendor
         $this->requestTime = $requestTime;
 
         $this->response = $response;
-        $this->responseHttpCode = method_exists($resp, 'getStatusCode') ? $resp->getStatusCode() : '';
-        $this->responseHeaders = method_exists($resp, 'getHeaders') ? $resp->getHeaders() : [];
+        $this->responseHttpCode = (method_exists($resp, 'getStatusCode')) ? $resp->getStatusCode() : '';
+        $this->responseHeaders = (method_exists($resp, 'getHeaders')) ? $resp->getHeaders() : [];
     }
 }
