@@ -105,7 +105,7 @@ class RequestVendor
         $this->requestTime = $requestTime;
 
         $this->response = $response;
-        $this->responseHttpCode = $resp->getStatusCode();
-        $this->responseHeaders = $resp->getHeaders();
+        $this->responseHttpCode = method_exists($resp, 'getStatusCode') ? $resp->getStatusCode() : '';
+        $this->responseHeaders = method_exists($resp, 'getHeaders') ? $resp->getHeaders() : [];
     }
 }
