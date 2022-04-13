@@ -22,9 +22,6 @@ class SeamlessWalletRequest
      */
     public $path;
 
-    /**
-     * @var TransferStats
-     */
     public $transferStats;
 
     /**
@@ -52,7 +49,7 @@ class SeamlessWalletRequest
      */
     public $responseDecrypt;
 
-    public function __construct(string $opCode, string $host, string $path, TransferStats $transferStats, array $requestParams, string $requestEncrypt, array $requestHeaders, string $response, string $responseDecrypt) {
+    public function __construct(string $opCode, string $host, string $path, $transferStats, array $requestParams, string $requestEncrypt, array $requestHeaders, string $response, string $responseDecrypt) {
         $this->opCode = $opCode;
         $this->host = $host;
         $this->path = $path;
