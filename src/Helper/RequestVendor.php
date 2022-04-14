@@ -79,7 +79,7 @@ class RequestVendor
      * @param array $request
      * @param float $requestTime
      * @param string $response
-     * @param ResponseInterface $resp
+     * @param $resp
      * @param array $requestHeaders
      */
     public function __construct(
