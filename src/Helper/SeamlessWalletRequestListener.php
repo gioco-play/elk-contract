@@ -39,15 +39,16 @@ class SeamlessWalletRequestListener implements ListenerInterface
         co(function () use ($event) {
             $this->elk->seamlessWalletRequest(
                 $event->opCode,
-                $event->transferStats->getRequest()->getUri()->getHost(),
-                $event->transferStats->getRequest()->getUri()->getPath(),
+                $event->host,
+                $event->path,
                 $event->requestParams,
                 $event->requestEncrypt,
-                $event->transferStats->getTransferTime(),
+                $event->requestHeaders,
+                method_exists($event->transferStats, 'getTransferTime') ? $event->transferStats->getTransferTime() : 0,
                 $event->response,
                 $event->responseDecrypt,
-                $event->transferStats->getResponse()->getHeaders(),
-                $event->transferStats->getResponse()->getStatusCode()
+                method_exists($event->transferStats, 'getHeaders') ? $event->transferStats->getResponse()->getHeaders() : [],
+                method_exists($event->transferStats, 'getStatusCode') ? $event->transferStats->getResponse()->getStatusCode() : 0
             );
         });
     }

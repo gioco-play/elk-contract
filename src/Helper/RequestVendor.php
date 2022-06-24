@@ -79,7 +79,7 @@ class RequestVendor
      * @param array $request
      * @param float $requestTime
      * @param string $response
-     * @param ResponseInterface $resp
+     * @param $resp
      * @param array $requestHeaders
      */
     public function __construct(
@@ -91,7 +91,7 @@ class RequestVendor
         array $request,
         float $requestTime,
         string $response,
-        ResponseInterface $resp,
+        $resp,
         array $requestHeaders = []
     )
     {
@@ -105,7 +105,7 @@ class RequestVendor
         $this->requestTime = $requestTime;
 
         $this->response = $response;
-        $this->responseHttpCode = $resp->getStatusCode();
-        $this->responseHeaders = $resp->getHeaders();
+        $this->responseHttpCode = (method_exists($resp, 'getStatusCode')) ? $resp->getStatusCode() : 0;
+        $this->responseHeaders = (method_exists($resp, 'getHeaders')) ? $resp->getHeaders() : [];
     }
 }

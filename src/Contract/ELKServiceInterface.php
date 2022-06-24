@@ -56,13 +56,14 @@ interface ELKServiceInterface {
      * @param string $path
      * @param array $requestParams
      * @param string $requestEncrypt
+     * @param array $requestHeaders
      * @param float $transferTime 請求時間
      * @param string $response
      * @param array $responseHeaders
      * @param int $responseStatusCode
      * @return mixed
      */
-    function seamlessWalletRequest(string $op_code, string $host, string $path, array $requestParams, string $requestEncrypt, float $transferTime, string $response, string $responseDecrypt, array $responseHeaders, int $responseStatusCode);
+    function seamlessWalletRequest(string $op_code, string $host, string $path, array $requestParams, string $requestEncrypt, array $requestHeaders, float $transferTime, string $response, string $responseDecrypt, array $responseHeaders, int $responseStatusCode);
 
     /**
      * 提交資料至ELK
