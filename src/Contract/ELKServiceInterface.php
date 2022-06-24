@@ -73,8 +73,5 @@ interface ELKServiceInterface {
      * @return mixed
      */
     function post(string $uri, array $data);
-
-
-    function test();
 }
 
