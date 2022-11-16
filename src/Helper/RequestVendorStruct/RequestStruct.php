@@ -32,7 +32,7 @@ class RequestStruct
     /**
      * @var array
      */
-    public $header;
+    public $headers;
 
     public function __construct(
         string $host,
@@ -40,13 +40,13 @@ class RequestStruct
         string $method,
         array $params,
         float $requestTime,
-        array $header = []
+        array $headers = []
     ) {
         $this->host = $host;
         $this->path = $path;
         $this->method = $method;
         $this->params = $params;
         $this->requestTime = $requestTime;
-        $this->header = $header;
+        $this->headers = $headers;
     }
 }
