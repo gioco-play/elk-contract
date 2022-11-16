@@ -35,11 +35,11 @@ class RequestStruct
     public $headers;
 
     public function __construct(
-        string $host,
-        string $path,
-        string $method,
-        array $params,
-        float $requestTime,
+        string $host = '',
+        string $path = '',
+        string $method = '',
+        array $params = [],
+        float $requestTime = 0,
         array $headers = []
     ) {
         $this->host = $host;
@@ -50,5 +50,15 @@ class RequestStruct
         $this->headers = $headers;
 
         return $this;
+    }
+
+    public static function toObject(array $data): RequestStruct
+    {
+        $array = new RequestStruct();
+        foreach ($data as $k => $v) {
+            $array->$k = $v;
+        }
+
+        return $array;
     }
 }

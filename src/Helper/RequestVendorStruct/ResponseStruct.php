@@ -15,13 +15,23 @@ class ResponseStruct
     public $httpCode;
 
     public function __construct(
-        string $body,
-        int $httpCode
+        string $body = '',
+        int $httpCode = 0
     )
     {
         $this->body = $body;
         $this->httpCode = $httpCode;
 
         return $this;
+    }
+
+    public static function toObject(array $data): ResponseStruct
+    {
+        $array = new ResponseStruct();
+        foreach ($data as $k => $v) {
+            $array->$k = $v;
+        }
+
+        return $array;
     }
 }
