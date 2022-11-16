@@ -42,8 +42,8 @@ interface ELKServiceInterface {
     function gfRequestVendorV2(
         string $opCode,
         string $vendorCode,
-        array $request,
-        array $response
+        $request,
+        $response
     );
 
     /**
