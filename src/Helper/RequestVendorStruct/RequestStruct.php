@@ -20,6 +20,11 @@ class RequestStruct
     public $method;
 
     /**
+     * @var array
+     */
+    public $params;
+
+    /**
      * @var float
      */
     public $requestTime;
@@ -33,12 +38,14 @@ class RequestStruct
         string $host,
         string $path,
         string $method,
+        array $params,
         float $requestTime,
         array $header = []
     ) {
         $this->host = $host;
         $this->path = $path;
         $this->method = $method;
+        $this->params = $params;
         $this->requestTime = $requestTime;
         $this->header = $header;
     }
