@@ -17,14 +17,8 @@ class RequestVendorV2
      */
     public $vendorCode;
 
-    /**
-     * @var RequestStruct
-     */
     public $request;
 
-    /**
-     * @var ResponseStruct
-     */
     public $response;
 
     public function __construct(
