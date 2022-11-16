@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 namespace GiocoPlus\ELK\Contract;
+use GiocoPlus\ELK\Helper\RequestVendorStruct\RequestStruct;
+use GiocoPlus\ELK\Helper\RequestVendorStruct\ResponseStruct;
+
 /**
  * ELK
  */
@@ -34,6 +37,13 @@ interface ELKServiceInterface {
         int $responseHttpCode,
         array $responseHeaders,
         array $requestHeaders
+    );
+
+    function gfRequestVendorV2(
+        string $opCode,
+        string $vendorCode,
+        RequestStruct $request,
+        ResponseStruct $response
     );
 
     /**
