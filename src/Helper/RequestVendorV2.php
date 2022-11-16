@@ -30,8 +30,8 @@ class RequestVendorV2
     public function __construct(
         string $opCode,
         string $vendorCode,
-        RequestStruct $request,
-        ResponseStruct $response
+        $request,
+        $response
     )
     {
         $this->opCode = $opCode;
