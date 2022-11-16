@@ -21,5 +21,7 @@ class ResponseStruct
     {
         $this->body = $body;
         $this->httpCode = $httpCode;
+
+        return $this;
     }
 }

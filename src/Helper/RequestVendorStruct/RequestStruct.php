@@ -48,5 +48,7 @@ class RequestStruct
         $this->params = $params;
         $this->requestTime = $requestTime;
         $this->headers = $headers;
+
+        return $this;
     }
 }
