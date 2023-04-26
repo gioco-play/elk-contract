@@ -39,6 +39,7 @@ class LineNotifyListener implements ListenerInterface {
         if (empty($event->notifyAccessToken)) {
             throw new \Exception('lint notify, token is not configured successfully');
         }
+        $this->notifyAccessToken = $event->notifyAccessToken;
 
         $envTxt = env('SERVICE_ENV', 'unknown');
         $sendMsg = "[{$envTxt}]" . "\r\n";
