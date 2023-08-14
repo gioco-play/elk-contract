@@ -3,6 +3,8 @@
 namespace GiocoPlus\ELK\Helper;
 
 use GiocoPlus\ELK\Contract\ELKServiceInterface;
+use Hyperf\Event\Contract\ListenerInterface;
+use Psr\Container\ContainerInterface;
 
 class SeamlessWalletRequestListenerV2 implements ListenerInterface
 {
