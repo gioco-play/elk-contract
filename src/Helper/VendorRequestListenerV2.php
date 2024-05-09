@@ -28,19 +28,22 @@ class VendorRequestListenerV2 implements ListenerInterface
     {
         $vendorCode = strtolower($event->vendorCode);
         $responseOther = $event->responseOther;
+        $execStart = $event->execStart;
+        $execStart = intval(str_pad(strval($execStart), 13, '0'));
+
         $params = [
             'vendor_code' => $vendorCode,
             'path' => $event->requestPath,
             'request' => [
-                'params' => $event->requestParams,
+                'params' => json_encode($event->requestParams, JSON_UNESCAPED_UNICODE),
                 'method' => $event->requestMethod,
-                'headers' => $event->requestHeaders,
+                'headers' => json_encode($event->requestHeaders, JSON_UNESCAPED_UNICODE),
             ],
             'response' => [
                 'body' => $event->response,
                 'other' => $responseOther
             ],
-            'execTime' => $execTime ?? 0,
+            'execTime' => (micro_timestamp() - $execStart) / 1000,
             'created_time' => micro_timestamp(),
         ];
 
