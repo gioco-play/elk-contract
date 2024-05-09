@@ -93,6 +93,9 @@ class VendorRequestListenerV2 implements ListenerInterface
         }
         var_dump(__CLASS__ . " response: " . $response);
 
-        return json_decode($response, true);
+        if ($response) {
+            return json_decode($response , true);
+        }
+        return $response;
     }
 }
