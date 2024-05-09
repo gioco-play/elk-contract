@@ -79,16 +79,19 @@ class VendorRequestListenerV2 implements ListenerInterface
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 
         $response = curl_exec($ch);
-//        $info = curl_getinfo($ch);
+        $info = curl_getinfo($ch);
         $err = curl_error($ch);
         curl_close($ch);
 
-//        $httpCode = $info['http_code'] ?? 0;
-//        $requestTime = floatval($info['total_time'] ?? 0);
+        $httpCode = $info['http_code'] ?? 0;
+        $requestTime = floatval($info['total_time'] ?? 0);
+
+        var_dump(__CLASS__ . " httpCode: " . $httpCode . " requestTime: " . $requestTime);
 
         if ($err) {
             var_dump(__CLASS__ . " err: " . $err);
         }
+        var_dump(__CLASS__ . " response: " . $response);
 
         return json_decode($response, true);
     }
