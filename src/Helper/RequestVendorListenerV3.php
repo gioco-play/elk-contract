@@ -37,7 +37,7 @@ class RequestVendorListenerV3 implements ListenerInterface
 
         $params = [
             'vendor_code' => strtolower($event->vendorCode),
-            'operator_code' => strtoupper($event->operatorCode),
+            'operator_code' => strtoupper($event->opCode),
             'host' => $request->host,
             'path' => $request->path,
             'request' => [
