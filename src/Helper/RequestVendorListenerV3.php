@@ -29,8 +29,11 @@ class RequestVendorListenerV3 implements ListenerInterface
 
     public function process(object $event)
     {
-        $request = RequestStruct::toObject($event->request);
-        $response = ResponseStruct::toObject($event->response);
+//        $request = RequestStruct::toObject($event->request);
+//        $response = ResponseStruct::toObject($event->response);
+
+        $request = $event->request;
+        $response = $event->response;
 
         $params = [
             'vendor_code' => strtolower($event->vendorCode),
