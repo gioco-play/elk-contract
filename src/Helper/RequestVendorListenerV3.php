@@ -55,7 +55,9 @@ class RequestVendorListenerV3 implements ListenerInterface
         ];
 
         $uri = '/gfRequestVendor';
-
+        co(function() use ($uri, $params) {
+            $this->curlELK($uri, $params);
+        });
     }
 
     private function curlELK(string $uri, array $data)
