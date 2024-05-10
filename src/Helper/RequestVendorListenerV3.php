@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace GiocoPlus\ELK\Helper;
 
+use Hyperf\Event\Contract\ListenerInterface;
+use Psr\Container\ContainerInterface;
 use GiocoPlus\ELK\Contract\ELKServiceInterface;
 use GiocoPlus\ELK\Helper\RequestVendorStruct\RequestStruct;
 use GiocoPlus\ELK\Helper\RequestVendorStruct\ResponseStruct;
