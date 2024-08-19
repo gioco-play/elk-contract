@@ -59,14 +59,13 @@ class VendorRequest
     {
         $this->vendorCode = $vendorCode;
         $this->requestPath = $request->path();
-        var_dump("requestAll:", $request->all());
-        var_dump("request.getBody.getContents:", $request->getBody()->getContents());
-
         $requestParams = $request->all();
-        var_dump(gettype($requestParams));
         if (gettype($requestParams) == 'array' && count($requestParams) == 0) {
-            var_dump("123");
             $requestParams = ['body' => $request->getBody()->getContents()];
+        }
+
+        if (! empty($request->getAttribute('decrypt_request'))) {
+            $requestParams['decrypt_request'] = $request->getAttribute('decrypt_request');
         }
 
         $this->requestParams = $requestParams;
