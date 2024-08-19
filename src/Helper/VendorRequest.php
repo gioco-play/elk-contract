@@ -61,7 +61,14 @@ class VendorRequest
         $this->requestPath = $request->path();
         var_dump("requestAll:", $request->all());
         var_dump("request.getBody.getContents:", $request->getBody()->getContents());
-        $this->requestParams = $request->all() ?? $request->getBody()->getContents() ?? '';
+
+        $requestParams = $request->all();
+        if (gettype($this->requestParams) == 'array' && count($requestParams) == 0) {
+            $requestParams = $request->getBody()->getContents();
+        }
+
+        $this->requestParams = $requestParams;
+
         $this->requestMethod = $request->getMethod();
         $this->requestHeaders = $request->getHeaders();
         $this->execStart = $execStart;
