@@ -64,7 +64,7 @@ class VendorRequest
 
         $requestParams = $request->all();
         if (gettype($this->requestParams) == 'array' && count($requestParams) == 0) {
-            $requestParams = $request->getBody()->getContents();
+            $requestParams = ['body' => $request->getBody()->getContents()];
         }
 
         $this->requestParams = $requestParams;
