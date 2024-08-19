@@ -59,7 +59,7 @@ class VendorRequest
     {
         $this->vendorCode = $vendorCode;
         $this->requestPath = $request->path();
-        $this->requestParams = $request->all();
+        $this->requestParams = $request->all() ?? $request->getParsedBody() ?? $request->getBody()->getContents() ?? '';
         $this->requestMethod = $request->getMethod();
         $this->requestHeaders = $request->getHeaders();
         $this->execStart = $execStart;
