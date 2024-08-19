@@ -63,7 +63,9 @@ class VendorRequest
         var_dump("request.getBody.getContents:", $request->getBody()->getContents());
 
         $requestParams = $request->all();
+        var_dump(gettype($this->requestParams));
         if (gettype($this->requestParams) == 'array' && count($requestParams) == 0) {
+            var_dump("123");
             $requestParams = ['body' => $request->getBody()->getContents()];
         }
 
