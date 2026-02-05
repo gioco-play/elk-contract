@@ -17,7 +17,7 @@ use Hyperf\Event\Contract\ListenerInterface;
 use Psr\Container\ContainerInterface;
 
 /**
- *
+ * @deprecated 請使用 RequestVendorLocalListener
  */
 class RequestVendorListener implements ListenerInterface
 {

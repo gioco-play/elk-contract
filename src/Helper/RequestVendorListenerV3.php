@@ -8,6 +8,9 @@ use GiocoPlus\ELK\Contract\ELKServiceInterface;
 use GiocoPlus\ELK\Helper\RequestVendorStruct\RequestStruct;
 use GiocoPlus\ELK\Helper\RequestVendorStruct\ResponseStruct;
 
+/**
+ * @deprecated 請使用 RequestVendorLocalListener
+ */
 class RequestVendorListenerV3 implements ListenerInterface
 {
     /**

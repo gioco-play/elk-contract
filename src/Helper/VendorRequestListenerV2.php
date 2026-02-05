@@ -5,6 +5,9 @@ namespace GiocoPlus\ELK\Helper;
 use Hyperf\Event\Contract\ListenerInterface;
 use Psr\Container\ContainerInterface;
 
+/**
+ * @deprecated 請使用 VendorRequestLocalListener
+ */
 class VendorRequestListenerV2 implements ListenerInterface
 {
     /**

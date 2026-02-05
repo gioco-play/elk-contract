@@ -7,6 +7,9 @@ use Hyperf\Event\Annotation\Listener;
 use Hyperf\Event\Contract\ListenerInterface;
 use Psr\Container\ContainerInterface;
 
+/**
+ * @deprecated 請使用 RequestVendorLocalListener
+ */
 class RequestVendorListenerV2 implements ListenerInterface
 {
     /**

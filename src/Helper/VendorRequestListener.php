@@ -9,6 +9,9 @@ use GiocoPlus\ELK\Contract\ELKServiceInterface;
 use Psr\Container\ContainerInterface;
 use Hyperf\Event\Contract\ListenerInterface;
 
+/**
+ * @deprecated 請使用 VendorRequestLocalListener
+ */
 class VendorRequestListener implements ListenerInterface
 {
     /**

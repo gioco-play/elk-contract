@@ -1,3 +1,22 @@
+# Dependencies
 /vendor/
-.idea/
 composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Runtime files
+/runtime/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local

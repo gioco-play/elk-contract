@@ -5,10 +5,7 @@ namespace GiocoPlus\ELK\Helper;
 use GiocoPlus\ELK\Helper\RequestVendorStruct\RequestStruct;
 use GiocoPlus\ELK\Helper\RequestVendorStruct\ResponseStruct;
 
-/**
- * @deprecated 請使用 RequestVendorLocal
- */
-class RequestVendorV2
+class RequestVendorLocal
 {
     /**
      * @var string

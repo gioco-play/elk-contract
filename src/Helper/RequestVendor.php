@@ -7,8 +7,7 @@ namespace GiocoPlus\ELK\Helper;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class RequestVendor
- * @package App\Event
+ * @deprecated 請使用 RequestVendorLocal
  */
 class RequestVendor
 {
