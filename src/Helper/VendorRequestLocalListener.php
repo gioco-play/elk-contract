@@ -60,8 +60,7 @@ class VendorRequestLocalListener implements ListenerInterface
 
         // 使用協程進行非阻塞檔案寫入
         \Swoole\Coroutine::create(function () use ($params) {
-            $date = (new \DateTime('now', new \DateTimeZone('Asia/Taipei')))->format('Y-m-d');
-            $logPath = \BASE_PATH . '/runtime/logs/vendor_request_gf_' . $date . '.log';
+            $logPath = \BASE_PATH . '/runtime/logs/vendor_request_gf.log';
             $logDir = dirname($logPath);
             if (!is_dir($logDir)) {
                 mkdir($logDir, 0755, true);
