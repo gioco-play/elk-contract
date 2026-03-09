@@ -39,7 +39,7 @@ class RequestVendorLocalListener implements ListenerInterface
                     'method' => $event->request->method ?? '',
                     'time' => $event->request->requestTime ?? 0,
                     'url' => $event->request->host . $event->request->path,
-                    'local_ip' => $event->request->localIp ?? '',
+//                    'local_ip' => $event->request->localIp ?? '',
                 ],
                 'response' => [
                     'body' => $event->response->body,

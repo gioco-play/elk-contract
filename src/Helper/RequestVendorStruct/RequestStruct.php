@@ -44,8 +44,8 @@ class RequestStruct
         string $method = '',
         array $params = [],
         float $requestTime = 0,
-        array $headers = [],
-        string $localIp = ''
+        array $headers = []
+//        string $localIp = ''
     ) {
         $this->host = $host;
         $this->path = $path;
@@ -53,7 +53,7 @@ class RequestStruct
         $this->params = $params;
         $this->requestTime = $requestTime;
         $this->headers = $headers;
-        $this->localIp = $localIp;
+//        $this->localIp = $localIp;
 
         return $this;
     }
